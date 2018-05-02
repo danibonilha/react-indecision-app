@@ -1,14 +1,14 @@
 class VisibilityToogle extends React.Component {
 	constructor(props) {
 		super(props)
-		this.onToogle = this.onToogle.bind(this);
+		this.handleToggleVisibility = this.handleToggleVisibility.bind(this);
 		this.state = {
 			title: 'Visibility Toggle',
 			visibility: false,
 			detailsText: "My details paragraph"
 		}
 	}
-	onToogle() {
+	handleToggleVisibility() {
 		this.setState((prevState) => {
 			return {
 				visibility: !prevState.visibility
@@ -20,7 +20,7 @@ class VisibilityToogle extends React.Component {
 			<div>
 				<Header title={this.state.title} />
 				<Button
-					click={this.onToogle}
+					click={this.handleToggleVisibility}
 					buttonName={
 						this.state.visibility ? 'Hide Details' : 'Show Details'
 					}
