@@ -3,7 +3,7 @@ const app = {
 	title: 'Indecision App',
 	subtitle: 'Let te computer choose!',
 	options: []
-}
+};
 const onFormSubmit = (event) =>{
 	event.preventDefault();
 	const option = event.target.elements.option.value;
@@ -12,18 +12,18 @@ const onFormSubmit = (event) =>{
 		app.options.push(option);
 		event.target.elements.option.value = '';
 	}
-	render()
-}
+	render();
+};
 
 const onRemoveAll = () => {
 	app.options = [];
 	render();
-}
+};
 
 const onMakeDecision = () => {
 	const randomNum = Math.floor(Math.random() * app.options.length);
 	const option = app.options[randomNum];
-}
+};
 
 const appRoot = document.getElementById('app');
 
@@ -36,9 +36,9 @@ const render = () => {
 			<button disabled={app.options.length === 0} onClick={onMakeDecision}>What should I do</button>
 			<button onClick={onRemoveAll}>Remove All</button>
 			<ol>
-			{
-				app.options.map((option) => <li key={option}>{option}</li>)
-			}
+				{
+					app.options.map((option) => <li key={option}>{option}</li>)
+				}
 			</ol>
 			<form onSubmit={onFormSubmit}>
 				<input type="text" name="option"/>

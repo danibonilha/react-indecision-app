@@ -1,12 +1,12 @@
 class VisibilityToogle extends React.Component {
 	constructor(props) {
-		super(props)
+		super(props);
 		this.handleToggleVisibility = this.handleToggleVisibility.bind(this);
 		this.state = {
 			title: 'Visibility Toggle',
 			visibility: false,
-			detailsText: "My details paragraph"
-		}
+			detailsText: 'My details paragraph'
+		};
 	}
 	handleToggleVisibility() {
 		this.setState((prevState) => {
